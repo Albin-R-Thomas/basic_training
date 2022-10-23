@@ -11,16 +11,71 @@
 
 <script>
     let val ;
+    let i =0 ;
+    let callPrompt = (text)=>{
+      
+        let value = prompt("Please Edit the Item ",text);
+        return value;
+    }
+    let eclick = (e)=>{
+        
+        let num = e.target.id;
+        num = num[num.length-1];
+     
+        let element_id = "item".concat(num)
+       
+        let element = document.getElementById(element_id)
+        let newValue ;
+        newValue = callPrompt(element.innerText);
+        element.textContent = newValue
+       
+    }
+    let dclick = (e)=>{
+        let num = e.target.id;
+        num = num[num.length-1];
+     
+        let element_id = "item".concat(num)
+       
+        let element = document.getElementById(element_id)
+        let change_id = "ele".concat(num);
+        let change = document.getElementById(change_id);
+        element.style.display = "none";
+        change.style.display = "none";
+    }
     let onClick = ()=>{
        val = document.getElementById("aitem").value ;
        if(val.length!=0){
         document.getElementById("aitem").value = null;
-        console.log(val);}
-        let item = document.createElement("div")
+      let item = document.createElement("div")
         item.innerText = val
+        item.classList = "item";
+        item.id = "item".concat(i);
+        document.getElementsByClassName("icontainer")[0].append(item)
+        let ele = document.createElement("div");
+        ele.classList =  "ele"
+        ele.id = "ele".concat(i);;
+        let edit = document.createElement("button")
+        edit.innerText = "Edit";
+        edit.classList = "edit";
+        edit.id = "edit".concat(i);
+        edit.addEventListener("click",eclick)
+        let del = document.createElement("button")
+        del.innerText = "Delete";
+        del.classList = "del";
+        del.id = "del".concat(i);
+        del.addEventListener("click",dclick)
         
+        document.getElementsByClassName("icontainer")[0].append(ele)
+        document.getElementsByClassName("ele")[i].append(edit)
+        document.getElementsByClassName("ele")[i].append(del)
+
+      i++
+       }
+       else {
+        alert("The item can't be empty")
+       }
     }
-    
+  
 
 
 </script>
@@ -31,10 +86,10 @@
     <input type ="text" id="aitem" class="aitem" placeholder="Enter your task here">
     <button class="bitem" onclick="onClick()">Add item</button>
     <br>
-  <!-- /  <div class="icontainer"> -->
+    <h2 class="lhead">Your List :- </h2>
+    <div class="icontainer">
 
-        <h2 class="lhead">Your List :- </h2>
-
-    <!-- </div> -->
+    </div>
+   
 </body>
 </html>
