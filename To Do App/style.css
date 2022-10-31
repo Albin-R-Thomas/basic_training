@@ -38,8 +38,8 @@
     border-radius: 15px;
     min-width: 780px;
     min-height: 36px;
-    height: auto;
-    width: auto;
+    height: fix-content;
+    width: fix-content;
     padding: 10px 10px 10px 10px;
 }
 .icontainer .ele{
