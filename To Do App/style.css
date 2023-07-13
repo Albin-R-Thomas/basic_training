@@ -1,0 +1,49 @@
+.head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.atext{
+    position:  relative ;
+    left:20px ;
+    font-size: 25px; 
+}
+.aitem{
+    position: relative;
+    left: 20px;
+    top: 8px;
+    width: 280px;
+    height: 24px;
+    text-align: center;
+    }
+.bitem{
+    position: relative;
+    left: 25px;
+    top: 8px;
+    width: 75px;
+    height: 30px;
+}
+.lhead{
+    position: relative;
+    left: 17px;
+    top: 33px;
+
+}
+.icontainer .item{
+    position: relative;
+    left: 25px;
+    top: 20px;
+    margin: 10px 0px 10px 0px;
+    border: 2px solid black;
+    border-radius: 15px;
+    min-width: 780px;
+    min-height: 36px;
+    height: fix-content;
+    width: fix-content;
+    padding: 10px 10px 10px 10px;
+}
+.icontainer .ele{
+    position: relative;
+    left: 365px;
+    top: 14px;
+}
